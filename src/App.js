@@ -3,11 +3,11 @@ import Navbar from './Components/Navbar/Navbar';
 import ItemsList from './Components/ItemsList/ItemsList';
 import CardDetails from './Components/CardDetails/CardDetails';
 import Electronics from './Components/Filters/Electronics/Electronics';
-import Footer from './Components/Footer/Footer';
-import './App.css';
 import Jewelery from './Components/Filters/Jewelery/Jewelery';
 import MensClothing from './Components/Filters/MensClothing/MensClothing';
 import WomensClothing from './Components/Filters/WomensClothing/WomensClothing';
+import Footer from './Components/Footer/Footer';
+import './App.css';
 
 function App() {
   return (

@@ -9,7 +9,7 @@ export default function WomensClothing() {
     const [itemCard, setItemCard] = useState()
   
     const fetchItemCard = () => {
-      axios.get('https://fakestoreapi.com/products/category/mens-clothing')
+      axios.get('https://fakestoreapi.com/products/category/women%27s%20clothing')
         .then(response => setItemCard(response.data))
     }
   

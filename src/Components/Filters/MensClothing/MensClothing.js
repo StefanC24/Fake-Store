@@ -1,24 +1,25 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import ItemCard from '../ItemCard/ItemCard'
-import './ItemsList.css'
 import { Link } from 'react-router-dom'
+import ItemCard from '../../ItemCard/ItemCard'
 
-export default function ItemsList() {
-  const [itemCard, setItemCard] = useState()
-  
-  const fetchItemCard = () => {
-    axios.get('https://fakestoreapi.com/products')
-      .then(response => setItemCard(response.data))
-  }
+export default function MensClothing() {
 
-  useEffect(() => {
-    fetchItemCard()
-  }, []);
+    const [itemCard, setItemCard] = useState()
   
+    const fetchItemCard = () => {
+      axios.get('https://fakestoreapi.com/products/category/mens-clothing')
+        .then(response => setItemCard(response.data))
+    }
+  
+    useEffect(() => {
+      fetchItemCard()
+    }, []);
+
   return (
     <div className='cards-container'>
-      <div className='filters-container'>
+    <div className='filters-container'>
         <Link to='/'className='filter'>All</Link>
         <Link to='/electronics'className='filter'>Electronics</Link>
         <Link to='/mens-clothing'className='filter'>Men'sClothing</Link>

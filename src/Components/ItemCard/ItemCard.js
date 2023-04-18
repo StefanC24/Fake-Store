@@ -3,7 +3,7 @@ import './ItemCard.css'
 
 export default function ItemCard(props) {
   return (
-    <Link className='product-card' to={`products/${props.id}`}>
+    <Link className='product-card' to={`/products/${props.id}`}>
   
       <img className='card-image' 
         src={props.image} 

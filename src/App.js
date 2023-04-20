@@ -15,6 +15,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/' element={<ItemsList/>} />
+        <Route path='/' element={<ItemsList/>} />
         <Route path='/electronics' element = {<Electronics/>}/>
         <Route path='/mens-clothing' element = {<MensClothing/>}/>
         <Route path='/jewelery' element = {<Jewelery/>}/>

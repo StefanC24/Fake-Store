@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom'
+import { BsHeart } from 'react-icons/bs';
 import './ItemCard.css'
 
 export default function ItemCard(props) {
@@ -13,6 +14,7 @@ export default function ItemCard(props) {
     </Link>
       <p className='price card-details'>£{props.price}</p>
         <button className='add-button'>Add to cart</button>
+        <BsHeart className='fav-icon'/>
       </div>
   )
 }

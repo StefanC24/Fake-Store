@@ -3,6 +3,11 @@
     margin: 10px
 }
 
+.fav-icon{
+    width: 30px;
+    transform: translate(45px);
+}
+
 .product-card{
     display: flex;
     flex-direction: column;

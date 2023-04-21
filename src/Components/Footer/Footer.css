@@ -1,0 +1,8 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+    /* position: absolute;
+    bottom: 0; */
+  }

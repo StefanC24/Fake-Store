@@ -1,8 +1,9 @@
 .footer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
     align-items: baseline;
-    /* position: absolute;
-    bottom: 0; */
+    background-color: antiquewhite;
+    position: fixed;
+    bottom: 0;
   }

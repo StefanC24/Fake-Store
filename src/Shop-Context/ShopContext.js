@@ -5,7 +5,9 @@ export const ShopContext = createContext()
 
 const ShopContextProvider = (props) => {
     
-    const [cartItems, setCartItems] = useState()
+    const [cartItems, setCartItems] = useState([])
+
+    console.log(cartItems)
     
     useEffect(() => {
         setCartItems(JSON.parse(window.localStorage.getItem('cartItems')))

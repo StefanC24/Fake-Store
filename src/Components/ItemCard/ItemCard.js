@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom'
 import {useContext} from 'react'
 import { BsHeart } from 'react-icons/bs';
 import './ItemCard.css'
-import ShopContext from '../../Shop-Context/ShopContext'
+import {ShopContext} from '../../Shop-Context/ShopContext'
 export default function ItemCard(props) {
 
   const {addItemToCart} = useContext(ShopContext)

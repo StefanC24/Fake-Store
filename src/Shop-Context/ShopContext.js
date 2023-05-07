@@ -13,7 +13,7 @@ const ShopContextProvider = (props) => {
     
     const addItemToCart = (productToBeAdded) =>{
         let newItem;
-        newItem = window.localStorage.getItem('cartItems')
+        newItem = window.localStorage.getItem(cartItems)
         if(newItem){
             newItem = JSON.parse(newItem)
             newItem = [...newItem, productToBeAdded]
@@ -21,8 +21,9 @@ const ShopContextProvider = (props) => {
         else{
             newItem = [productToBeAdded]
         }
-        window.localStorage.setItem('cartItems', JSON.stringify(newItem))
+        window.localStorage.setItem(cartItems, JSON.stringify(newItem))
         setCartItems(newItem);
+        console.log(cartItems)
     }
 
     const removeItemFromCart = ({productToBeRemovedId}) =>{

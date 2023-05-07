@@ -7,7 +7,9 @@ const ShopContextProvider = (props) => {
     
     const [cartItems, setCartItems] = useState([])
 
-    console.log(cartItems)
+    console.log(cartItems.shift())
+    // console.log(cartItems)
+    
     
     useEffect(() => {
         setCartItems(JSON.parse(window.localStorage.getItem('cartItems')))

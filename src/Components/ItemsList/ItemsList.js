@@ -23,7 +23,7 @@ export default function ItemsList() {
     fetchItemCard()
   }, []);
   
-  console.log(itemCard)
+  // console.log(itemCard)
 
   return (
     <div className='cards-container'>

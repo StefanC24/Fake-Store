@@ -2,8 +2,9 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { ShopContext } from '../../../Shop-Context/ShopContext'
 const Favourites = () => {
-  const {favItems} = useContext(ShopContext)
-console.log(favItems)
+
+    const {favItems, removeItemFromFav} = useContext(ShopContext)
+
   return (
        <div className='cart-container'>
       {favItems?.map((item)=>
@@ -15,6 +16,10 @@ console.log(favItems)
             <p className='item-title'>{item.title}</p>
             </Link >
             <p className='item-price'>£ {item.price}</p>
+            <button
+                onClick={ ()=> removeItemFromFav(item.id)}> 
+                Remove
+            </button>   
         </div>)}
     </div>
   )

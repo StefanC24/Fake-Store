@@ -11,7 +11,7 @@ import '../ItemCard/ItemCard.css'
 
 
 export default function ItemsList() {
-  const {addItemToCart, addItemToFavourites, removeItemFromCart} = useContext(ShopContext)
+  const {addItemToCart, addItemToFavourites} = useContext(ShopContext)
   const [itemCard, setItemCard] = useState()
   
   const fetchItemCard = () => {
@@ -48,7 +48,7 @@ export default function ItemsList() {
               onClick={ () => addItemToCart(item) }>
                 Add to cart
             </button>
-              <BsHeart onClick={ ()=> addItemToFavourites(item)} className='fav-icon'/>
+            <BsHeart style={{cursor: "pointer"}} onClick={ ()=> addItemToFavourites(item)} className='fav-icon'/>
           </div>)}
       </div>
     

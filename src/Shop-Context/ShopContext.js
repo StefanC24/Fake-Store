@@ -25,6 +25,7 @@ const ShopContextProvider = (props) => {
     setCartItems(newItem);
   };
 
+  //   remover the curly braces from the parameter
   const removeItemFromCart = ({ productToBeRemovedId }) => {
     let newItem = JSON.parse(window.localStorage.getItem("cartItems"));
     newItem = newItem.filter((product) => product.id !== productToBeRemovedId);
@@ -43,11 +44,14 @@ const ShopContextProvider = (props) => {
     window.localStorage.setItem("favItems", JSON.stringify(newItem));
     setFavItems(newItem);
   };
+
+  //   remover the curly braces from the parameter
   const removeItemFromFav = ({ productToBeRemovedId }) => {
     let newItem = JSON.parse(window.localStorage.getItem("favItems"));
     newItem = newItem.filter((product) => product.id !== productToBeRemovedId);
     console.log(newItem);
     window.localStorage.setItem("favItems", JSON.stringify(newItem));
+    setFavItems(newItem);
     // You are missing the state update here like in the add to favorites
   };
 

@@ -11,7 +11,7 @@ import '../ItemCard/ItemCard.css'
 
 
 export default function ItemsList() {
-  const {addItemToCart} = useContext(ShopContext)
+  const {addItemToCart, addItemToFavourites, removeItemFromCart} = useContext(ShopContext)
   const [itemCard, setItemCard] = useState()
   
   const fetchItemCard = () => {
@@ -23,8 +23,6 @@ export default function ItemsList() {
     fetchItemCard()
   }, []);
   
-  // console.log(itemCard)
-
   return (
     <div className='cards-container'>
       <div className='filters-container'>
@@ -35,7 +33,8 @@ export default function ItemsList() {
         <Link to='/womens-clothing'className='filter'>Women's Clothing</Link>
       </div>
       <div className='products'>
-        {itemCard?.map(item => <div className='card'>
+        {itemCard?.map(item => 
+        <div className='card' key={item.id}>
           <Link className='product-card' to={`/products/${item.id}`}>
             <img className='card-image' 
               src={item.image} 
@@ -49,7 +48,7 @@ export default function ItemsList() {
               onClick={ () => addItemToCart(item) }>
                 Add to cart
             </button>
-            <BsHeart className='fav-icon'/>
+              <BsHeart onClick={ ()=> addItemToFavourites(item)} className='fav-icon'/>
           </div>)}
       </div>
     

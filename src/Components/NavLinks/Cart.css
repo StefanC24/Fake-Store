@@ -1,0 +1,32 @@
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 2em;
+}
+
+.cart-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 3em ;
+
+}
+
+.item-img{
+    width: 3.5em;
+    margin-right: 7px ;
+}
+
+.item-title{
+    font-size: 0.7rem;
+}
+
+.item-price{
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+a{
+    color: black;
+    font-weight: bold;
+}

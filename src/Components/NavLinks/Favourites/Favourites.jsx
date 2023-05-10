@@ -1,15 +1,12 @@
-import React, { useContext }  from 'react'
-import { ShopContext } from '../../Shop-Context/ShopContext'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
-import './Cart.css'
-
-export default function Cart() {
-
-  const {cartItems, removeItemFromCart} = useContext(ShopContext)
- 
+import { ShopContext } from '../../../Shop-Context/ShopContext'
+const Favourites = () => {
+  const {favItems} = useContext(ShopContext)
+console.log(favItems)
   return (
-    <div className='cart-container'>
-      {cartItems?.map((item)=>
+       <div className='cart-container'>
+      {favItems?.map((item)=>
         <div className='cart-item' key={item.id}>
           <Link to={`/products/${item.id}`} >
             <img className='item-img' src={item.image} alt={item.title}></img>
@@ -18,8 +15,9 @@ export default function Cart() {
             <p className='item-title'>{item.title}</p>
             </Link >
             <p className='item-price'>£ {item.price}</p>
-            <button onClick={ ()=> removeItemFromCart(item)}>Remove from cart</button>   
         </div>)}
     </div>
   )
 }
+
+export default Favourites

@@ -6,15 +6,13 @@ export const ShopContext = createContext()
 const ShopContextProvider = (props) => {
     
     const [cartItems, setCartItems] = useState([])
-
-    console.log(cartItems.shift())
-    // console.log(cartItems)
-    
-    
+    const [favItems, setFavItems] = useState([])
+      
     useEffect(() => {
         setCartItems(JSON.parse(window.localStorage.getItem('cartItems')))
+        setFavItems(JSON.parse(window.localStorage.getItem('favItems')))
     }, [])
-    
+        
     const addItemToCart = (productToBeAdded) =>{
         let newItem;
         newItem = window.localStorage.getItem('cartItems')
@@ -34,10 +32,26 @@ const ShopContextProvider = (props) => {
         newItem = newItem.filter(product => product.id !== productToBeRemovedId)
         window.localStorage.setItem('cartItems', JSON.stringify(newItem));
         setCartItems(newItem);
-
         }
 
-    const contextValue = {cartItems, addItemToCart, removeItemFromCart, setCartItems}
+    const addItemToFavourites = (productToBeAdded) =>{
+        let newItem = window.localStorage.getItem('favItems')
+        if(newItem){
+            newItem = JSON.parse(newItem)
+            newItem = [...newItem, productToBeAdded]
+        }
+        else{
+            newItem = [productToBeAdded]
+        }
+        window.localStorage.setItem('favItems', JSON.stringify(newItem))
+        setFavItems(newItem);
+    }
+    
+console.log(favItems)  
+
+    const contextValue = {
+        cartItems, favItems, addItemToCart, removeItemFromCart, addItemToFavourites, setCartItems, setFavItems
+    }
 
     return (
         <ShopContext.Provider value={contextValue}>

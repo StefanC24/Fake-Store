@@ -10,6 +10,7 @@ import Footer from './Components/Footer/Footer';
 import './App.css';
 import ShopContextProvider from './Shop-Context/ShopContext';
 import Cart from './Components/NavLinks/Cart';
+import Favourites from './Components/NavLinks/Favourites/Favourites';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path='/' element={<ItemsList/>} />
           <Route path='/' element={<ItemsList/>} />
           <Route path='cart' element={<Cart/>} />
+          <Route path='favourites' element={<Favourites/>} />
           <Route path='/electronics' element = {<Electronics/>}/>
           <Route path='/mens-clothing' element = {<MensClothing/>}/>
           <Route path='/jewelery' element = {<Jewelery/>}/>

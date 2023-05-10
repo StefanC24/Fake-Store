@@ -27,7 +27,7 @@ const ShopContextProvider = (props) => {
         setCartItems(newItem);
     }
 
-    const removeItemFromCart = ({productToBeRemovedId}) =>{
+    const removeItemFromCart = (productToBeRemovedId) =>{
         let newItem = JSON.parse(window.localStorage.getItem('cartItems'))
         newItem = newItem.filter(product => product.id !== productToBeRemovedId)
         window.localStorage.setItem('cartItems', JSON.stringify(newItem));
@@ -46,12 +46,13 @@ const ShopContextProvider = (props) => {
         window.localStorage.setItem('favItems', JSON.stringify(newItem))
         setFavItems(newItem);
     }
-    const removeItemFromFav = ({productToBeRemovedId}) =>{
+    const removeItemFromFav = (productToBeRemovedId) =>{
         let newItem = JSON.parse(window.localStorage.getItem('favItems'))
         newItem = newItem.filter(product => product.id !== productToBeRemovedId)
-            console.log(newItem) 
         window.localStorage.setItem('favItems', JSON.stringify(newItem));
-        }
+        setFavItems(newItem);
+
+    }
     
 
     const contextValue = {

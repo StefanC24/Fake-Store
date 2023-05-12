@@ -14,44 +14,49 @@ const ShopContextProvider = (props) => {
     }, [])
         
     const addItemToCart = (productToBeAdded) =>{
-        let newItem;
-        newItem = window.localStorage.getItem('cartItems')
-        if(newItem){
-            newItem = JSON.parse(newItem)
-            newItem = [...newItem, productToBeAdded]
+        let cartItem;
+        cartItem = window.localStorage.getItem('cartItems')
+        if(cartItem){
+            cartItem = JSON.parse(cartItem)
+            // cartItem = [...cartItem, productToBeAdded]
+            if(!cartItem.includes(productToBeAdded)){
+                cartItem = [...cartItem, productToBeAdded]
+            }
+        }else{
+            cartItem = [productToBeAdded]
         }
-        else{
-            newItem = [productToBeAdded]
-        }
-        window.localStorage.setItem('cartItems', JSON.stringify(newItem))
-        setCartItems(newItem);
+
+        window.localStorage.setItem('cartItems', JSON.stringify(cartItem))
+        setCartItems(cartItem);
+
+        //if product exists in cart increment qty property by 1
+        //else add product to cart and set property qty to 1
     }
 
     const removeItemFromCart = (productToBeRemovedId) =>{
-        let newItem = JSON.parse(window.localStorage.getItem('cartItems'))
-        newItem = newItem.filter(product => product.id !== productToBeRemovedId)
-        window.localStorage.setItem('cartItems', JSON.stringify(newItem));
-        setCartItems(newItem);
+        let cartItem = JSON.parse(window.localStorage.getItem('cartItems'))
+        cartItem = cartItem.filter(product => product.id !== productToBeRemovedId)
+        window.localStorage.setItem('cartItems', JSON.stringify(cartItem));
+        setCartItems(cartItem);
         }
 
     const addItemToFavourites = (productToBeAdded) =>{
-        let newItem = window.localStorage.getItem('favItems')
-        if(newItem){
-            newItem = JSON.parse(newItem)
-            newItem = [...newItem, productToBeAdded]
+        let cartItem = window.localStorage.getItem('favItems')
+        if(cartItem){
+            cartItem = JSON.parse(cartItem)
+            cartItem = [...cartItem, productToBeAdded]
         }
         else{
-            newItem = [productToBeAdded]
+            cartItem = [productToBeAdded]
         }
-        window.localStorage.setItem('favItems', JSON.stringify(newItem))
-        setFavItems(newItem);
+        window.localStorage.setItem('favItems', JSON.stringify(cartItem))
+        setFavItems(cartItem);
     }
     const removeItemFromFav = (productToBeRemovedId) =>{
-        let newItem = JSON.parse(window.localStorage.getItem('favItems'))
-        newItem = newItem.filter(product => product.id !== productToBeRemovedId)
-        window.localStorage.setItem('favItems', JSON.stringify(newItem));
-        setFavItems(newItem);
-
+        let cartItem = JSON.parse(window.localStorage.getItem('favItems'))
+        cartItem = cartItem.filter(product => product.id !== productToBeRemovedId)
+        window.localStorage.setItem('favItems', JSON.stringify(cartItem));
+        setFavItems(cartItem);
     }
     
 

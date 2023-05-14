@@ -40,17 +40,27 @@ const ShopContextProvider = (props) => {
         setCartItems(cartItem);
         }
 
-    const addItemToFavourites = (productToBeAdded) =>{
-        let cartItem = window.localStorage.getItem('favItems')
-        if(cartItem){
-            cartItem = JSON.parse(cartItem)
-            cartItem = [...cartItem, productToBeAdded]
-        }
-        else{
-            cartItem = [productToBeAdded]
-        }
-        window.localStorage.setItem('favItems', JSON.stringify(cartItem))
-        setFavItems(cartItem);
+        const addItemToFav = (productToBeAdded) => {
+            let cartItem = window.localStorage.getItem('FavItems')
+            if(cartItem){
+                cartItem = JSON.parse(cartItem)
+                const index = cartItem.findIndex(item => item.id === productToBeAdded.id);
+                console.log(index)
+
+                if (index > -1) {
+                    cartItem[index].quantity += productToBeAdded.quantity;
+                    
+                } else {
+                    cartItem.push(productToBeAdded);
+                }
+            }
+            else{
+                cartItem = [productToBeAdded]
+            }
+            
+            console.log(cartItem)
+            window.localStorage.setItem('favItems', JSON.stringify(cartItem))
+            setFavItems(cartItem);
     }
     const removeItemFromFav = (productToBeRemovedId) =>{
         let cartItem = JSON.parse(window.localStorage.getItem('favItems'))
@@ -61,7 +71,7 @@ const ShopContextProvider = (props) => {
     
 
     const contextValue = {
-        cartItems, favItems, addItemToCart, removeItemFromCart, removeItemFromFav, addItemToFavourites, setCartItems, setFavItems
+        cartItems, favItems, addItemToCart, removeItemFromCart, removeItemFromFav, addItemToFav, setCartItems, setFavItems
     }
 
     return (

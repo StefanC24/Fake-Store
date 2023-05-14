@@ -9,7 +9,7 @@ import { BsHeart } from "react-icons/bs";
 import "../ItemCard/ItemCard.css";
 
 export default function ItemsList() {
-  const { addItemToCart, addItemToFavourites } = useContext(ShopContext);
+  const { addItemToCart, addItemToFav } = useContext(ShopContext);
   const [itemCard, setItemCard] = useState();
 
   const fetchItemCard = () => {
@@ -59,7 +59,7 @@ export default function ItemsList() {
             </button>
             <BsHeart
               style={{ cursor: "pointer" }}
-              onClick={() => addItemToFavourites(item)}
+              onClick={() => addItemToFav(item)}
               className="fav-icon"
             />
           </div>

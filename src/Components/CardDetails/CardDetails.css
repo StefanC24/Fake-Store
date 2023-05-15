@@ -1,5 +1,13 @@
 .details-img{
-    max-width: 300px;
+    max-width: 200px;
     min-width: 100px;
     margin: 30px 50px
+}
+
+@media only  screen  and (max-width: 400px) {
+    .details-img{
+        max-width: 100px;
+        min-width: 100px;
+        margin: 30px 50px
+    }
 }

@@ -15,7 +15,6 @@ export default function Navbar() {
       <Logo />
       <Link to='/favourites' className='cart-button'>
         <BsFillHeartFill className='cart-img'/>
-        {favItems.length > 0 ? <div>{favItems.length}</div> : null}
       </Link>
       <Link to='/cart' className='cart-button'>
         <BsFillCartFill className='cart-img'/>

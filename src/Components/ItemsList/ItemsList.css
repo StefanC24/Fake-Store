@@ -13,7 +13,7 @@
 }
 
 .filter{
-    margin: 10px
+    margin: 10px;
 }
 
 .products{
@@ -24,8 +24,8 @@
 }
 
 .card{
-    border: 1px solid;
-    margin: 10px
+    margin: 10px;
+    /* width: auto */
 }
 
 .fav-icon{
@@ -38,8 +38,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    /* width: 200px;
+    height: 200px; */
 }
 
 .card-image{
@@ -59,6 +59,7 @@
 
 .price{
     margin-bottom: 5px; 
+    font-weight: bold;
 }
 
 
@@ -99,12 +100,13 @@
         align-items: center;
     }
     .card{
-        border: 1px solid;
+        box-shadow: 0px 0px 2px;
         margin: 2px;
+        padding: 5px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100%;
+        width: 90%;
     }
     
     .fav-icon{
@@ -116,11 +118,11 @@
         display: flex;
         flex-direction: row;
         max-width: 70%;
-        max-height: 70px;
     }
     
     .card-image{
-        max-width: 2em;
+        max-width: 5em;
+        max-height: 5em;
         margin-bottom: 5px;
     }
     
@@ -131,11 +133,21 @@
     .price-cart-favourite{
         display: flex;
         flex-direction: column;
+        width: 30%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .price{
+    font-size: 0.8rem;
+
     }
     
     .add-button{
         margin-bottom: 5px;
-        transform: translate(15px);
         font-size: 0.5rem;
+        width: 10em;
+        transform: translate(0px);
+
     }
 }

@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: antiquewhite;
+    width: 100%;
 }
 
 .logo{
@@ -65,6 +66,6 @@
     
 
     .cart-img{
-        width: 1rem;
+        width: 1.3rem;
     }
 }

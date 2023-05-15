@@ -54,15 +54,15 @@ export default function ItemsList() {
               <p className="title card-details">{item.title}</p>
             </Link>
             <div className="price-cart-favourite">
-              <p className="price card-details">£{item.price}</p>
-              <button className="add-button" onClick={() => addItemToCart(item)}>
-                Add to cart
-              </button>
               <BsHeart
                 style={{ cursor: "pointer" }}
                 onClick={() => addItemToFav(item)}
                 className="fav-icon"
               />
+              <button className="add-button" onClick={() => addItemToCart(item)}>
+                Add +
+              </button>
+              <p className="price card-details">£{item.price}</p>
               </div>
           </div>
         ))}

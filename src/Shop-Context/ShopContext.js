@@ -14,23 +14,24 @@ const ShopContextProvider = (props) => {
     }, [])
         
     const addItemToCart = (productToBeAdded) =>{
-        let cartItem;
-        cartItem = window.localStorage.getItem('cartItems')
+        let cartItem = window.localStorage.getItem('cartItems')
         if(cartItem){
             cartItem = JSON.parse(cartItem)
-            // cartItem = [...cartItem, productToBeAdded]
-            if(!cartItem.includes(productToBeAdded)){
-                cartItem = [...cartItem, productToBeAdded]
+            
+            const index = cartItem.findIndex(item => item.id === productToBeAdded.id);
+            
+            if (index > -1) {
+                cartItem[index].quantity++;
+            } else {
+                cartItem.push(productToBeAdded);
             }
         }else{
             cartItem = [productToBeAdded]
-        }
-
+            }
+        
+        console.log(cartItem)
         window.localStorage.setItem('cartItems', JSON.stringify(cartItem))
         setCartItems(cartItem);
-
-        //if product exists in cart increment qty property by 1
-        //else add product to cart and set property qty to 1
     }
 
     const removeItemFromCart = (productToBeRemovedId) =>{
@@ -41,26 +42,27 @@ const ShopContextProvider = (props) => {
         }
 
         const addItemToFav = (productToBeAdded) => {
-            let cartItem = window.localStorage.getItem('FavItems')
-            if(cartItem){
-                cartItem = JSON.parse(cartItem)
-                const index = cartItem.findIndex(item => item.id === productToBeAdded.id);
+            let favItem = window.localStorage.getItem('favItems')
+            if(favItem){
+                favItem = JSON.parse(favItem)
+                const index = favItem.findIndex(item => item.id === productToBeAdded.id);
+                
+                console.log(index)
+                if (index > -1) {
                 console.log(index)
 
-                if (index > -1) {
-                    cartItem[index].quantity += productToBeAdded.quantity;
-                    
+                    favItem[index].quantity += 1;
                 } else {
-                    cartItem.push(productToBeAdded);
+                    favItem.push(productToBeAdded);
                 }
             }
             else{
-                cartItem = [productToBeAdded]
+                favItem = [productToBeAdded]
             }
             
-            console.log(cartItem)
-            window.localStorage.setItem('favItems', JSON.stringify(cartItem))
-            setFavItems(cartItem);
+            console.log(favItem)
+            window.localStorage.setItem('favItems', JSON.stringify(favItem))
+            setFavItems(favItem);
     }
     const removeItemFromFav = (productToBeRemovedId) =>{
         let cartItem = JSON.parse(window.localStorage.getItem('favItems'))

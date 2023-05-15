@@ -8,6 +8,7 @@ import { ShopContext } from '../../Shop-Context/ShopContext';
 export default function Navbar() {
 
   const {favItems, cartItems} = useContext(ShopContext)
+  console.log(favItems)
 
   return (
     <div className='navbar'>

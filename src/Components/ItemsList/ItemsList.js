@@ -49,19 +49,21 @@ export default function ItemsList() {
               <img
                 className="card-image"
                 src={item.image}
-                alt={item.title}
-              ></img>
+                alt={item.title}>
+              </img>
               <p className="title card-details">{item.title}</p>
             </Link>
-            <p className="price card-details">£{item.price}</p>
-            <button className="add-button" onClick={() => addItemToCart(item)}>
-              Add to cart
-            </button>
-            <BsHeart
-              style={{ cursor: "pointer" }}
-              onClick={() => addItemToFav(item)}
-              className="fav-icon"
-            />
+            <div className="price-cart-favourite">
+              <p className="price card-details">£{item.price}</p>
+              <button className="add-button" onClick={() => addItemToCart(item)}>
+                Add to cart
+              </button>
+              <BsHeart
+                style={{ cursor: "pointer" }}
+                onClick={() => addItemToFav(item)}
+                className="fav-icon"
+              />
+              </div>
           </div>
         ))}
       </div>

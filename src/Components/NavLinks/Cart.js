@@ -18,6 +18,8 @@ export default function Cart() {
             <p className='item-title'>{item.title}</p>
             </Link >
             <p className='item-price'>£ {item.price}</p>
+            <p className='item-quantity'>{item.quantity}</p>
+            <p className='item-price'>£ {item.price}</p>
             <button 
               onClick={ ()=> removeItemFromCart(item.id)}>
               Remove from cart

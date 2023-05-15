@@ -15,6 +15,7 @@ const Favourites = () => {
           <Link to={`/products/${item.id}`} >
             <p className='item-title'>{item.title}</p>
             </Link >
+            <p>{item.quantity}</p>
             <p className='item-price'>£ {item.price}</p>
             <button
                 onClick={ ()=> removeItemFromFav(item.id)}> 

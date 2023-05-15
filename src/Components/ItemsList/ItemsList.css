@@ -66,3 +66,76 @@
     margin-bottom: 5px;
     transform: translate(15px);
 }
+
+@media only screen and (max-width: 400px) {
+
+    .cards-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .filters-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .filter{
+        margin: 5px;
+        font-size: 0.5rem;
+        border: 1px solid;
+        border-radius: 6px;
+        padding: 3px;
+        background-color: antiquewhite;
+    }
+    
+    .products{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card{
+        border: 1px solid;
+        margin: 2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .fav-icon{
+        width: 3em;
+        transform: translate(0px);
+    }
+    
+    .product-card{
+        display: flex;
+        flex-direction: row;
+        max-width: 70%;
+        max-height: 70px;
+    }
+    
+    .card-image{
+        max-width: 2em;
+        margin-bottom: 5px;
+    }
+    
+    .card-details, .title{
+        font-size: 0.5rem;
+    }
+
+    .price-cart-favourite{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .add-button{
+        margin-bottom: 5px;
+        transform: translate(15px);
+        font-size: 0.5rem;
+    }
+}

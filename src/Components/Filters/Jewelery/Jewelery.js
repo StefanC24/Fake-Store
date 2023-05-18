@@ -10,7 +10,7 @@ import {ShopContext} from '../../../Shop-Context/ShopContext'
 export default function MensClothing() {
 
   const [itemCard, setItemCard] = useState()
-  const {addItemToCart} = useContext(ShopContext)
+  const {addItemToCart, addItemToFav} = useContext(ShopContext)
 
   
     const fetchItemCard = () => {
@@ -47,7 +47,8 @@ export default function MensClothing() {
               onClick={ () => addItemToCart(item) }>
                 Add to cart
             </button>
-            <BsHeart className='fav-icon'/>
+            <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
+
         </div>)}
       </div>
     

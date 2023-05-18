@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import ItemsList from "./Components/ItemsList/ItemsList";
+// import ItemsList from "./Components/ItemsList/ItemsList";
 import CardDetails from "./Components/CardDetails/CardDetails";
 import Electronics from "./Components/Filters/Electronics/Electronics";
 import Jewelery from "./Components/Filters/Jewelery/Jewelery";
@@ -11,6 +11,8 @@ import "./App.css";
 import ShopContextProvider from "./Shop-Context/ShopContext";
 import Cart from "./Components/NavLinks/Cart";
 import Favourites from "./Components/NavLinks/Favourites/Favourites";
+import Home from "./Components/Homepage/Home";
+import All from "./Components/Filters/All/All";
 
 function App() {
   return (
@@ -18,8 +20,8 @@ function App() {
       <ShopContextProvider>
         <Navbar />
         <Routes>
-          <Route path="/" element={<ItemsList />} />
-          <Route path="/" element={<ItemsList />} />
+          <Route path="/" element={<Home />} />
+          <Route path="all-items" element={<All/>}/>
           <Route path="cart" element={<Cart />} />
           <Route path="favourites" element={<Favourites />} />
           {/* This should be all done within the items list page, it needs to be refactored */}

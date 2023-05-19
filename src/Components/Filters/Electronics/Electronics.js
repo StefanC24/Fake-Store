@@ -24,7 +24,7 @@ export default function Electronics() {
   return (
     <div className='cards-container'>
       <div className='filters-container'>
-          <Link to='/items'className='filter'>All</Link>
+          <Link to='/all-items'className='filter'>All</Link>
           <Link to='/electronics'className='filter'>Electronics</Link>
           <Link to='/mens-clothing'className='filter'>Men'sClothing</Link>
           <Link to='/jewelery'className='filter'>Jewelery</Link>
@@ -44,7 +44,7 @@ export default function Electronics() {
             <button 
               className='add-button'  
               onClick={ () => addItemToCart(item) }>
-                Add to cart
+                Buy
             </button>
             <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
 

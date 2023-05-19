@@ -45,7 +45,7 @@ export default function All() {
             <button 
               className='add-button'  
               onClick={ () => addItemToCart(item) }>
-                Add to cart
+                Buy
             </button>
             <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
         </div>)}

@@ -25,7 +25,7 @@ export default function MensClothing() {
   return (
     <div className='cards-container'>
     <div className='filters-container'>
-        <Link to='/'className='filter'>All</Link>
+        <Link to='/all-items'className='filter'>All</Link>
         <Link to='/electronics'className='filter'>Electronics</Link>
         <Link to='/mens-clothing'className='filter'>Men'sClothing</Link>
         <Link to='/jewelery'className='filter'>Jewelery</Link>
@@ -45,7 +45,7 @@ export default function MensClothing() {
             <button 
               className='add-button'  
               onClick={ () => addItemToCart(item) }>
-                Add to cart
+                Buy
             </button>
             <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
 

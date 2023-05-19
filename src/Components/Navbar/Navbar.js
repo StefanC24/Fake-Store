@@ -12,18 +12,20 @@ export default function Navbar() {
 
   return (
     <div className='navbar'>
-      <Logo />
-      <Link to='/favourites' className='cart-button'>
-        <BsFillHeartFill className='cart-img'/>
-      </Link>
-      <Link to='/cart' className='cart-button'>
-        <BsFillCartFill className='cart-img'/>
-        {cartItems.length > 0 
-        ? 
-        <div className='itemCount'>{cartItems.length}</div> 
-        : 
-        null}
-      </Link>
+      <Logo  className='logo' />
+      <div className='cart-favourites'>
+        <Link to='/favourites' className='favourites'>
+          <BsFillHeartFill className='favourites'/>
+        </Link>
+          <Link to='/cart' className='cart-icon-container'>
+            <BsFillCartFill className='cart'/>
+            {cartItems.length > 0 
+            ? 
+            <div className='itemCount'>{cartItems.length}</div> 
+            : 
+            null}
+          </Link>
+      </div>
     </div>
   )
 }

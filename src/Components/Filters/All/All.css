@@ -11,14 +11,14 @@
     display: grid;
     grid-template-columns: repeat(02, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    max-width: 700px;
-    /* justify-content: center; */
-    /* align-items: center; */
+    max-width: 600px;
+    justify-content: center;
+    align-items: center;
 }
-
 
 .filter{
     margin: 10px;
+    width: 250px;
     font-size: 0.8em;
     border-radius: 20px;
     background-color: antiquewhite;
@@ -26,8 +26,9 @@
 
 .item1{
     grid-column: 1 / span 2;
-    height: 30em;
+    width: 100%;
 }
+
 .filterImg{
     max-width: 100%;
     max-height: 100%;
@@ -50,12 +51,11 @@
     padding: 6px;
     width: 9em;
     height: 13em;
-    border: 1px solid;
 }
 
 .fav-icon{
     width: 30px;
-    /* transform: translate(45px); */
+    transform: translate(45px);
 }
 
 .product-card{

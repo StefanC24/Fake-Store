@@ -1,10 +1,62 @@
 .details-img{
-    max-width: 200px;
-    min-width: 100px;
+    max-width: 250px;
+    min-width: 90px;
     margin: 30px 50px
 }
 
+.product-preview{
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-details{
+    text-align: left;
+}
+
+.details-title{    
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+
+.details-price{
+
+}
+
+
+
+.count-of-reviews{
+    color: rgba(161, 155, 155, 0.53);
+    font-size: small;
+    text-transform: uppercase;
+}
+
+.add-to-cart{
+    width: 100%;
+    height: 25px;
+    margin-bottom: 16px;
+    background-color: rgb(54, 50, 50);
+    color: aliceblue;
+    text-transform: uppercase;
+    border: none;
+    font-size: 0.7rem;
+}
+.add-to-wishlist{
+    width: 100%;
+    height: 25px;
+    background-color: transparent;
+    border: 1px solid rgb(213, 204, 204);
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+
 @media only  screen  and (max-width: 400px) {
+    .product-preview{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
     .details-img{
         max-width: 100px;
         min-width: 100px;

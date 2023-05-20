@@ -7,8 +7,8 @@ import { ShopContext } from '../../Shop-Context/ShopContext';
 
 export default function Navbar() {
 
-  const {favItems, cartItems} = useContext(ShopContext)
-  console.log(favItems)
+  const {cartItems} = useContext(ShopContext)
+  // console.log(favItems)
 
   return (
     <div className='navbar'>
@@ -19,11 +19,9 @@ export default function Navbar() {
         </Link>
           <Link to='/cart' className='cart-icon-container'>
             <BsFillCartFill className='cart'/>
-            {cartItems.length > 0 
-            ? 
-            <div className='itemCount'>{cartItems.length}</div> 
-            : 
-            null}
+            {cartItems.length > 0  
+              &&
+            <div className='itemCount'>{cartItems.length}</div>}
           </Link>
       </div>
     </div>

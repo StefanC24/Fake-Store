@@ -76,16 +76,16 @@
     margin: 0px;
 }
 
-.title{
-    font-size: 0.7rem;
-}
-
 .price-cart-favourite{
     display: flex;
     flex-direction: row;
     width: 15%;
     justify-content: center;
     align-items: center;
+}
+
+.title{
+    font-size: 0.7rem;
 }
 
 .price{

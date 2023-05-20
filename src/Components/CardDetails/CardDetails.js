@@ -19,10 +19,16 @@ export default function CardDetails() {
     },[])
 
   return (
-    <div>
+    <div className="product-preview">
         <img className='details-img' src={productDetails?.image} alt={productDetails?.title}></img>
-        <p>{productDetails?.title}</p>
-        <p>£{productDetails?.price}</p>
+        <div className='product-details'>
+          <p className='details-title'>{productDetails?.title}</p>
+          <p className='details-price'>£{productDetails?.price}</p>
+          <p className='product-rating'>{productDetails?.rating.rate} <span className='count-of-reviews'>({productDetails?.rating.count} reviews)</span></p>
+          <button className="add-to-cart">Add to cart</button>
+          <br></br>
+          <button className='add-to-wishlist'>Add to wishlist</button>
+        </div>
     </div>
   )
 }

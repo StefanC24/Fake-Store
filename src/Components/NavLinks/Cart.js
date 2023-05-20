@@ -17,7 +17,6 @@ export default function Cart() {
           <Link to={`/products/${item.id}`} >
             <p className='item-title'>{item.title}</p>
             </Link >
-            {/* <p className='item-quantity'>{item.quantity}</p> */}
             <p className='item-price'>£ {item.price}</p>
             <button className='remove-button'
               onClick={ ()=> removeItemFromCart(item.id)}>

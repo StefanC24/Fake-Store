@@ -20,7 +20,7 @@ export default function Cart() {
             <p className='item-price'>£ {item.price}</p>
             <button className='remove-button'
               onClick={ ()=> removeItemFromCart(item.id)}>
-              Remove
+              <img className='remove-button-picture' src='./assets/remove.png' alt='remove button'></img>
             </button>   
         </div>)}
     </div>

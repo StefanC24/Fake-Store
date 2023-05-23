@@ -1,7 +1,7 @@
 .cart-container{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     margin-top: 2em;
 }
 
@@ -10,11 +10,12 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 1em ;
-
+    height: 6rem;
+    box-shadow: 1px 3px 3px white;
 }
 
 .item-img{
-    width: 3em;
+    width: 4em;
     margin-right: 7px ;
 }
 
@@ -31,9 +32,33 @@
 
 .remove-button{
     font-size: 0.6em;
+    background-color: transparent;
+    border: none;
+}
+.remove-button-picture{
+    width: 2.3em;
+}
+
+.remove-button-picture:active::after{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
 }
 
 a{
     color: black;
     font-weight: bold;
+}
+
+@media screen and (max-width: 500px) {
+
+.cart-container{
+    width: 90%;
+}
+
+    .item-img{
+        width: 3em;
+        margin-right: 7px ;
+    }
 }

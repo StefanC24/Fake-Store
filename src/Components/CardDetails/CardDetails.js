@@ -1,12 +1,14 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './CardDetails.css'
+import { ShopContext } from '../../Shop-Context/ShopContext'
 
 export default function CardDetails() {
 
     const {id} = useParams()
     const [productDetails, setProductDetails] = useState();
+    const {addItemToCart, addItemToFav} = useContext(ShopContext)
 
     const fetchDetails = () => {
         axios.get(`https://fakestoreapi.com/products/${id}`)
@@ -25,9 +27,9 @@ export default function CardDetails() {
           <p className='details-title'>{productDetails?.title}</p>
           <p className='details-price'>£{productDetails?.price}</p>
           <p className='product-rating'>{productDetails?.rating.rate} <span className='count-of-reviews'>({productDetails?.rating.count} reviews)</span></p>
-          <button className="add-to-cart">Add to cart</button>
+          <button className="add-to-cart" onClick={()=>addItemToCart(productDetails)}>Add to cart</button>
           <br></br>
-          <button className='add-to-wishlist'>Add to wishlist</button>
+          <button className='add-to-wishlist' onClick={()=>addItemToFav(productDetails)}>Add to wishlist</button>
         </div>
     </div>
   )

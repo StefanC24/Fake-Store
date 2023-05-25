@@ -22,7 +22,10 @@ export default function CardDetails() {
 
   return (
     <div className="product-preview">
-        <img className='details-img' src={productDetails?.image} alt={productDetails?.title}></img>
+        <div className='details'>
+          <img className='details-img' src={productDetails?.image} alt={productDetails?.title}></img>
+          <details>{productDetails?.description}</details>
+        </div>
         <div className='product-details'>
           <p className='details-title'>{productDetails?.title}</p>
           <p className='details-price'>£{productDetails?.price}</p>

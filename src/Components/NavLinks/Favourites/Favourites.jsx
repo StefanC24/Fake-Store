@@ -17,9 +17,9 @@ const Favourites = () => {
             </Link >
             <p>{item.quantity}</p>
             <p className='item-price'>£ {item.price}</p>
-            <button
+            <button className='remove-button'
                 onClick={ ()=> removeItemFromFav(item.id)}> 
-                Remove
+                <img className='remove-button-picture' src='./assets/remove.png' alt='remove button'></img>
             </button>   
         </div>)}
     </div>

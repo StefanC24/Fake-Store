@@ -9,7 +9,7 @@ import './All.css'
 export default function All() {
 
   const [itemCard, setItemCard] = useState()
-  const {addItemToCart, addItemToFav} = useContext(ShopContext)
+  const {addItemToFav} = useContext(ShopContext)
 
   
     const fetchItemCard = () => {
@@ -23,7 +23,7 @@ export default function All() {
 
   return (
     <div className='cards-container'>
-      <div className="filters-container">
+      <div className="filters">
         {/* Instead of these being links to different pages they should be buttons that tap into the filtering directly from the api */}
           <Link to='/all-items' className='filter'>All</Link>
           <Link to='/electronics' className='filter'>Electronics</Link>
@@ -41,13 +41,10 @@ export default function All() {
             </img>
             <p className='title card-details'>{item.title}</p>
           </Link>
-          <p className='price card-details'>£{item.price}</p>
-            <button 
-              className='add-button'  
-              onClick={ () => addItemToCart(item) }>
-              <img className='add-button-picture' src='./assets/add.png' alt='add button'></img>
-            </button>
+          <span className='price-and-favButton'>
+            <p className='price'>£{item.price}</p>
             <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
+          </span>
         </div>)}
       </div>    
     </div>

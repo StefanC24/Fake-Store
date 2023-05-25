@@ -9,7 +9,7 @@ import {ShopContext} from '../../../Shop-Context/ShopContext'
 export default function Electronics() {
 
   const [itemCard, setItemCard] = useState()
-  const {addItemToCart, addItemToFav} = useContext(ShopContext)
+  const { addItemToFav} = useContext(ShopContext)
 
   
     const fetchItemCard = () => {
@@ -23,12 +23,13 @@ export default function Electronics() {
 
   return (
     <div className='cards-container'>
-      <div className='filters-container'>
-          <Link to='/all-items'className='filter'>All</Link>
-          <Link to='/electronics'className='filter'>Electronics</Link>
-          <Link to='/mens-clothing'className='filter'>Men'sClothing</Link>
-          <Link to='/jewelery'className='filter'>Jewelery</Link>
-          <Link to='/womens-clothing'className='filter'>Women's Clothing</Link>
+      <div className="filters">
+        {/* Instead of these being links to different pages they should be buttons that tap into the filtering directly from the api */}
+          <Link to='/all-items' className='filter'>All</Link>
+          <Link to='/electronics' className='filter'>Electronics</Link>
+          <Link to='/mens-clothing' className='filter'>Men'sClothing</Link>
+          <Link to='/jewelery' className='filter'>Jewelery</Link>
+          <Link to='/womens-clothing' className='filter'>Women's Clothing</Link>
       </div>
       <div className='products'>
         {itemCard?.map(item => 
@@ -40,14 +41,10 @@ export default function Electronics() {
             </img>
             <p className='title card-details'>{item.title}</p>
           </Link>
-          <p className='price card-details'>£{item.price}</p>
-            <button 
-              className='add-button'  
-              onClick={ () => addItemToCart(item) }>
-                Buy
-            </button>
+          <span className='price-and-favButton'>
+            <p className='price'>£{item.price}</p>
             <BsHeart className='fav-icon' onClick={() => addItemToFav(item)}/>
-
+          </span>
         </div>)}
       </div>    
     </div>

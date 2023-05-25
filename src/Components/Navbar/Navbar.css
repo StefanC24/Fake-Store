@@ -36,13 +36,15 @@
 }
 
 .itemCount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.8rem;
-    width: 1.2em;
-    height: 1.2em;
+    width: 1.3em;
+    height: 1.3em;
     border-radius: 50%;
     background-color: brown;
-    padding: 1px;
-    transform: translate(0.7px, 10px);
+    transform: translate(1.5px, 10px);
 }
 
 @media only screen and (max-width: 450px) {

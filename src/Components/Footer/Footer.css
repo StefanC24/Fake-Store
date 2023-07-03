@@ -5,7 +5,8 @@
     align-items: baseline;
     background-color: rgb(41, 39, 37);
     margin-top: 50px;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    z-index: -5;
   }
-  /* h3, p {
-    color: aliceblue;
-  } */
